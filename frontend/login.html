@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXcode AI - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6cf7;
+            --primary-dark: #3a5bd9;
+            --secondary-color: #6c757d;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fe;
+            color: var(--dark-color);
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 450px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remember-me input {
+            margin-right: 8px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .signup-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .language-dropdown{
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .signup-link a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .signup-link a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+
+        .shake {
+            animation: shake 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            EXcode AI
+        </div>
+        <h1>Log in to your account</h1>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <div class="error-message" id="email-error">Please enter a valid email address</div>
+            </div>
+            <div class="input-group">
+                <label for="name">Name</label>
+                <input type="name" id="name" placeholder="Enter your name" required>
+                <div class="error-message" id="name-error">Please enter a valid name</div>
+            </div>
+            <div class="language">
+                <div class="language-dropdown">
+                    <select id="language-select">
+                        <option value="javascript">Purpose of Use</option>
+                        <option value="python">Education</option>
+                        <option value="python">Bug Fixing</option>
+                        <option value="java">Developer's Need</option>
+                        <option value="cpp">Code Understanding</option>
+                        <option value="csharp">Coding Challenges</option>
+                    </select>
+                </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+            <div class="success-message" id="success-message">Login successful! Redirecting...</div>
+            <div class="error-message" id="login-error">Invalid email. Please try again.</div>
+            <button type="submit" class="btn" id="login-btn">Log In</button>
+        </form>
+        <div class="links">
+            <a href="#">Forgot password?</a>
+            <a href="#">Need help?</a>
+        </div>
+        <div class="signup-link">
+            Don't have an account? <a href="#">Sign up</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('login-form');
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const loginError = document.getElementById('login-error');
+            const successMessage = document.getElementById('success-message');
+            const loginButton = document.getElementById('login-btn');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                // Reset errors
+                emailError.style.display = 'none';
+                loginError.style.display = 'none';
+                
+                let isValid = true;
+                
+                // Simple email validation
+                if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
+                    emailError.style.display = 'block';
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    // Show loading state
+                    loginButton.textContent = 'Logging in...';
+                    loginButton.disabled = true;
+                    
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    
+                    // Redirect to main page after a short delay
+                    setTimeout(() => {
+                        window.location.href = 'index.html'; // This will redirect to your main page
+                    }, 1500);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

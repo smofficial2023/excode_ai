@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptfix Labs Banner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            background-image: url('images/landing image.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .banner-container {
+            display: grid;
+            grid-template-columns: 2.8fr 1.2fr; 
+            max-width: 980px;
+            max-height: 950px;
+            border-radius: 70px;
+            margin: 80px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .image-section {
+            flex: 1;
+            background-color: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .image-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .content-section {
+            flex: 1;
+            background-color: #0a3856;
+            color: white;
+            padding: 4rem 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            max-width: 200px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            color: #f0c14b;
+            font-size: 2rem;
+        }
+        
+        .logo-text {
+            font-size: 1.9rem;
+            font-weight: 600;
+        }
+        
+        .headline {
+            font-size: 2.5rem;
+            font-weight: 300;
+            line-height: 1.2;
+            margin-bottom: 3.5rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .cta-button {
+            background-color: #4a9cb5;
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            max-width: 250px;
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background-color: #3a8ca5;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icon {
+            background-color: transparent;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            border: 1px solid white;
+            transition: background-color 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="banner-container">
+        <div class="image-section">
+            <img src="C:\Users\User\Desktop\EXcode AI solutions\frontend\images\land_image.png">
+        </div>
+        <div class="content-section">
+            <div>
+                <div class="logo">
+                    <div class="logo-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 5L12 19L5 5M5 19L19 19" stroke="#f0c14b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">EXcode AI</div>
+                </div>
+                <h1 class="headline">Your personal debugging and coding-error guide with AI.</h1>
+                <a href="login.html" class="cta-button">Learn More</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8.25C10.0078 8.25 8.25 9.94922 8.25 12C8.25 14.0508 9.94922 15.75 12 15.75C14.0508 15.75 15.75 14.0508 15.75 12C15.75 9.94922 14.0508 8.25 12 8.25ZM21.75 7.5C21.75 6.375 20.625 5.25 19.5 5.25H4.5C3.32812 5.25 2.25 6.375 2.25 7.5V16.5C2.25 17.625 3.32812 18.75 4.5 18.75H19.5C20.625 18.75 21.75 17.625 21.75 16.5V7.5ZM12 17.25C9.1875 17.25 6.75 14.8125 6.75 12C6.75 9.1875 9.1875 6.75 12 6.75C14.8125 6.75 17.25 9.1875 17.25 12C17.25 14.8125 14.8125 17.25 12 17.25ZM18 8.25C17.5781 8.25 17.25 7.92188 17.25 7.5C17.25 7.07812 17.5781 6.75 18 6.75C18.375 6.75 18.75 7.07812 18.75 7.5C18.75 7.92188 18.375 8.25 18 8.25Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 5.77258C21.7271 6.10051 20.8978 6.32292 20.0256 6.42221C20.9161 5.91205 21.5972 5.10287 21.92 4.14164C21.0854 4.61602 20.1642 4.95699 19.1826 5.14308C18.3966 4.34021 17.2785 3.83984 16.0384 3.83984C13.6593 3.83984 11.7303 5.68691 11.7303 7.9676C11.7303 8.29553 11.7683 8.6151 11.8418 8.92193C8.26201 8.74799 5.08768 7.11147 2.96314 4.6095C2.59176 5.23397 2.38049 5.91205 2.38049 6.63998C2.38049 8.01653 3.14161 9.23143 4.2964 9.94937C3.5904 9.92772 2.92639 9.74543 2.34373 9.43859V9.49024C2.34373 11.4937 3.83583 13.1645 5.80542 13.5527C5.44315 13.647 5.06354 13.6973 4.67126 13.6973C4.39687 13.6973 4.12979 13.6701 3.87005 13.6198C4.41448 15.2604 6.00474 16.4597 7.89451 16.4935C6.42088 17.6057 4.57126 18.2647 2.56325 18.2647C2.21631 18.2647 1.87669 18.2436 1.54004 18.2017C3.45015 19.3826 5.70318 20.0652 8.12124 20.0652C16.0274 20.0652 20.3341 13.7646 20.3341 8.30271L20.3206 7.74857C21.1644 7.17342 21.9203 6.42683 22.5 5.77258Z" fill="white"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.5 12.0022C22.5 6.48731 18.0169 2 12.5 2C6.98306 2 2.5 6.48731 2.5 12.0022C2.5 16.9916 6.08644 21.1283 10.8594 21.8785V14.6372H8.28306V12.0022H10.8594V10.0196C10.8594 7.76564 12.2602 6.46564 14.3169 6.46564C15.2971 6.46564 16.3216 6.65848 16.3216 6.65848V9.15417H15.1919C14.08 9.15417 13.6406 10.0153 13.6406 10.8972V12.0022H16.2169L15.7163 14.6372H13.6406V21.8785C18.4136 21.1283 22 16.9916 22.5 12.0022Z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-based Code Explainer</title>
+    <link rel="stylesheet" href="excodestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header style="background-color: springgreen;">
+        <div class="container" style="border-radius: 15px;">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-code"></i>
+                    EXcode AI
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main style="background-color: springgreen;">
+        <section class="hero">
+            <div class="container" style="position: relative; height: 100%;">
+                <h1 style="color: chartreuse;">Understand Code Like Never Before</h1>
+                <p style="color: darkorange;">Paste your code below and our AI will explain it in plain English, line by line, making even complex code accessible to beginners and experts alike.</p>
+            </div>
+        </section>
+
+        <section class="code-section" style="background-color: springgreen;">
+            <div class="container" style="border-radius: 20px;">
+                <div class="language-selector">
+                    <div class="language-dropdown">
+                        <select id="language-select">
+                            <option value="javascript">JavaScript</option>
+                            <option value="python">Python</option>
+                            <option value="python">C</option>
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="csharp">C#</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="R">R</option>
+                            <option value="ruby">RUBY</option>
+                            <option value="sql">SQL</option>
+                            <option value="latex">LaTex</option>
+                            <option value="php">PHP</option>
+                            <option value="swift">Swift</option>
+                            <option value="typescript">TypeScript</option>
+                            <option value="mongodb">mongoDB</option>
+                            <option value="dart">DART</option>
+                            <option value="docker">Docker</option>
+                            <option value="rust">Rust</option>
+                            <option value="go">Go</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Code complexity slider -->
+                <div class="slider-container">
+                    <label for="complexity-slider">Explanation Complexity:</label>
+                    <input type="range" min="1" max="5" value="3" class="slider" id="complexity-slider">
+                    <div class="slider-labels">
+                        <span>5-8th Standard</span>
+                        <span>10th Standard</span>
+                        <span>12th Standard</span>
+                        <span>Graduation Level</span>
+                        <span>Advanced Level</span>
+                    </div>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-input">
+                        <label for="code-editor">Paste your code here:</label>
+                        <textarea id="code-editor" placeholder="// Paste your code here and our AI will explain it line by line"></textarea>
+                    </div>
+                </div>
+                <div class="button-container">
+                    <button id="explain-btn" class="btn">Explain This Code</button>
+                    <button id="explain-error-btn" class="btn btn-secondary">Explain Error</button>
+                    <button id="outcomes-btn" class="btn btn-tertiary">Outcomes of the Code</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="loading">
+            <div class="spinner"></div>
+            <p>Analyzing your code...</p>
+        </div>
+
+        <section class="explanation-section" style="background-color: springgreen;">
+            <div class="container" style="border-radius: 25px;">
+                <div class="explanation-header">
+                    <h2>Code Explanation</h2>
+                </div>
+                <div id="explanation-output">
+                    <div class="explanation-placeholder">
+                        <p>Your code explanation will appear here after you submit your code.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <div class="container">
+                <h2>Why Use EXcode AI?</h2>
+                <div class="feature-slider-container">
+                    <div class="feature-slider">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Advanced AI Analysis</h3>
+                            <p>Our AI engine breaks down complex code structures and explains them in natural language that's easy to understand.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h3>Multi-Language Support</h3>
+                            <p>From JavaScript to Python, Java to C++, we support all major programming languages with syntax-aware explanations.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Learning Tool</h3>
+                            <p>Perfect for students, junior developers, and anyone trying to understand unfamiliar code bases quickly.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h3>Error Detection & Explanation</h3>
+                            <p>Identify bugs and logic errors in your code with detailed explanations on how to fix them.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3>Performance Analysis</h3>
+                            <p>Get insights into your code's efficiency with time complexity analysis and suggestions for optimization.</p>
+                        </div>
+                    </div>
+                    <div class="slider-controls" id="features-slider-controls">
+                        <!-- Dots will be added dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="how-it-works">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="feature-slider-container">
+                    <div class="feature-slider">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-paste"></i>
+                            </div>
+                            <h3>Paste Your Code</h3>
+                            <p>Simply paste the code you want to understand into our editor.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h3>AI Analysis</h3>
+                            <p>Our advanced AI analyzes the code structure, patterns, and purpose.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Get Clear Explanations</h3>
+                            <p>Receive a detailed explanation in plain English, with key concepts highlighted.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h3>Error Detection</h3>
+                            <p>Our system automatically identifies common errors and provides clear explanations of what went wrong.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <h3>Outcome Prediction</h3>
+                            <p>Understand what your code will produce without having to run it, with detailed output examples.</p>
+                        </div>
+                    </div>
+                    <div class="slider-controls" id="how-it-works-slider-controls">
+                        <!-- Dots will be added dynamically by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: springgreen;">
+        <div class="container" style="background-color: springgreen;">
+            <div class="footer-content">
+                <p>© 2025 AI Code Explainer. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#" id="about">About Us</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prismjs/1.29.0/prism.min.js"></script>
+    <script src="excodescridpt.js"></script>
+    <script src="slider.js"></script>
+</body>
+</html>
