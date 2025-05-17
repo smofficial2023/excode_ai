@@ -1,4 +1,4 @@
-<h2>🚀 EXcode AI – Code Explanation & Debugging with</h2>
+<h2>🚀 EXcode AI – Code Explanation & Debugging with Complete AI Assistance</h2>
 <h3>Welcome to EXcode AI, your intelligent coding assistant built with the power of OpenAI's GPT-4. Whether you're a student, developer, or coding enthusiast, EXcode AI helps you understand, debug, and analyze code in a human-friendly way. Just paste your code and let our AI explain every line, detect errors, and predict outputs.</h3>
 
 
