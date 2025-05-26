@@ -22,8 +22,11 @@
         }
 
         body {
-            background-color: #f5f7fe;
+            background-image: url('images/login_image.png');
             color: var(--dark-color);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
             line-height: 1.6;
             height: 100vh;
             display: flex;
@@ -32,12 +35,21 @@
         }
 
         .login-container {
-            background-color: #fff;
+            background: linear-gradient(135deg, #00b09b, #96c93d);
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             width: 450px;
             padding: 40px;
             text-align: center;
+            
+            opacity: 0;
+            transform: translateY(100vh);
+            transition: all 3.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .login-container.animate-in {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .logo {
@@ -179,7 +191,7 @@
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <div class="login-container" id="login-container">
         <div class="logo">
             <i class="fas fa-code"></i>
             EXcode AI
@@ -226,6 +238,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const loginContainer = document.getElementById('login-container');
             const form = document.getElementById('login-form');
             const emailInput = document.getElementById('email');
             const emailError = document.getElementById('email-error');
@@ -233,32 +246,37 @@
             const successMessage = document.getElementById('success-message');
             const loginButton = document.getElementById('login-btn');
 
+            
+            setTimeout(() => {
+                loginContainer.classList.add('animate-in');
+            }, 200);
+
             form.addEventListener('submit', function(event) {
                 event.preventDefault();
                 
-                // Reset errors
+                
                 emailError.style.display = 'none';
                 loginError.style.display = 'none';
                 
                 let isValid = true;
                 
-                // Simple email validation
+                
                 if (!emailInput.value.includes('@') || !emailInput.value.includes('.')) {
                     emailError.style.display = 'block';
                     isValid = false;
                 }
                 
                 if (isValid) {
-                    // Show loading state
+                    
                     loginButton.textContent = 'Logging in...';
                     loginButton.disabled = true;
                     
-                    // Show success message
+                    
                     successMessage.style.display = 'block';
                     
-                    // Redirect to main page after a short delay
+                    
                     setTimeout(() => {
-                        window.location.href = 'index.html'; // This will redirect to your main page
+                        window.location.href = 'index.html'; 
                     }, 1500);
                 }
             });
