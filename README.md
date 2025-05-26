@@ -17,6 +17,7 @@
 
 <ul>📊 Complexity Slider — Choose your explanation level (from 5th grade to advanced developer).</ul>
 
+![Image](https://github.com/smofficial2023/excode_ai/blob/f6dbe39670ed7f9c215b6aac04d2f64f8a282025/Image%20of%20Login%20Page.png)
 
 <ul>🎓 Great for Learning — Ideal for students and self-learners trying to grasp coding logic.</ul>
 
